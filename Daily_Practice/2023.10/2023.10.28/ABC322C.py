@@ -12,5 +12,5 @@ for i in range(N-1):
     else:
         print(diff)
     
-
+print(0)
 
