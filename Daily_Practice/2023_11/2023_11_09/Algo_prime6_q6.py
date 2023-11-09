@@ -59,6 +59,8 @@ def main():
     indx = bisect.bisect_right(li, max(x, y))
     if indx == len(li):
         return -1 
+    elif indx == 0:
+        return li[0]
     else:
         return li[indx-1]
 
