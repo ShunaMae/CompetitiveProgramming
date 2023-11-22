@@ -16,7 +16,11 @@ This folder contains the code I wrote on daily basis. The codes are to solve pro
 
 ### Library
 
-This folder contains the library of functions and data structures that I used in the competitive programming contests. 
+This folder contains the snippets of functions and data structures that I am currently using. 
+
+### Old Library
+
+This folder contains the library of functions and data structures that I used in the competitive programming contests back in 2022. 
 
 ### Others 
 
