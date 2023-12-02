@@ -1,6 +1,3 @@
-
-# This is a template to use on solving problems 
-
 ## inputs 
 def is_int(): return int(input())
 def is_map(type): return map(type, input().split())
@@ -19,4 +16,16 @@ import sys
 from math import gcd, log2, log10
 from functools import lru_cache
 
+def main():
+    M, D = map(int, input().split())
+    y, m, d = is_map(int)
 
+    if d == D:
+        print(y, m, d+1)
+    else:
+        if m == M:
+            print(y+1, 1, 1)
+        else:
+            print(y, m+1, 1)
+
+main()
