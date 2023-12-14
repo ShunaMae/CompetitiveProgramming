@@ -17,6 +17,7 @@ from copy import deepcopy
 import sys
 # sys.setrecursionlimit(10**9)
 from math import gcd, log2, log10
-from functools import lru_cache
+from functools import lru_cache, reduce 
+
 
 
