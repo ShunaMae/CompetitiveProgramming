@@ -2,11 +2,8 @@ from math import atan, degrees
 
 def main():
     a, b, x = map(int, input().split())
-
-    h = x / (a*a)
-    res = b-h
-    
-    ans = degrees(atan(a/(b-h+res)))
-    print(ans)
+    if x >= a**2*b/2:
+        print(degrees(atan(a/(2*b-2*x/a**2))))
+    else:print(degrees(atan(2*x/a*b**2)))
 
 main()
