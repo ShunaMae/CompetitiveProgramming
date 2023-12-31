@@ -7,7 +7,7 @@ def main():
     d = defaultdict(list)
     two = deque([])
     for i in range(M):
-        k = int(input())
+        _ = int(input())
         a = list(map(int, input().split()))
         for item in a:
             d[item].append(i)
@@ -32,8 +32,6 @@ def main():
             
         if not two:
             break 
-        if sum(cnt) == 0:
-            break
     
     if sum(cnt) == 0:
         print("Yes")
