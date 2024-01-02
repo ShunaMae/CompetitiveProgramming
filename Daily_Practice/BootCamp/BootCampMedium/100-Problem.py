@@ -1,4 +1,5 @@
 from collections import Counter
+from itertools import product 
 
 def main():
     n = int(input())
@@ -14,16 +15,17 @@ def main():
     
     ec = Counter(even).most_common()
     oc = Counter(odd).most_common()
-    cnt = 19**18
+    ans = n
+    cnt = 0
 
-    if len(ec) == len(oc) == 1:
-        cnt = 0
-    elif ec[0][1] == oc[0][1]:
-        cnt = min(len(ec)-ec[0][1]+len(oc)-oc[1][1], len(ec)-ec[1][1]+len(oc)-oc[0][1])
-    else:
-        cnt = len(ec)+len(oc)+ec[0][1]-oc[0][1]
+    for (k1, v1), (k2, v2) in product(ec, oc):
+        if k1==k2: ans = min(ans, n-v1, n-v2)
+        else: ans = min(ans, n-v1-v2)
+        cnt += 1
+        if cnt >= 10000:
+            break
     
-    print(cnt)
+    print(ans)
 
 main()
 
