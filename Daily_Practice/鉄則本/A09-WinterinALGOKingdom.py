@@ -4,9 +4,14 @@ def accumulative_sum_2d(g):
     A = [[(0) for _ in range(ncol)] for _ in range(nrow)]
     for r in range(nrow):
         for c in range(ncol):
-            A[r][c] = (g[r][c] 
-                        + (A[r][c-1] if c>0 else 0) 
-                        + (A[r-1][c] if r>0 else 0))
+            if c == 0:
+                A[r][c] = g[r][c]
+            else:
+                A[r][c] = g[r][c] + A[r][c-1]
+
+    for c in range(ncol):
+        for r in range(1, nrow):
+            A[r][c] = A[r][c] + A[r-1][c]
     
     return A
 
@@ -26,7 +31,7 @@ def main():
         if c<H-1: G[c+1][b] -= 1
         # bottom right 
         if d<W-1 and c<H-1: G[c+1][d+1] += 1
-    print(G)
+
     ans = accumulative_sum_2d(G)
     for row in range(len(G)):
         print(*ans[row])
