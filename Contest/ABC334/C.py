@@ -1,33 +1,34 @@
 def main():
     N, K = map(int, input().split())
     A = sorted(list(map(int, input().split())))
-    ans = 0
-    left = []
-    skip_first = []
+    
+    # 貪欲に前からペアを作っていくとき
+    greedy_pair = 0
+    # 0番目を飛ばしてペアを作るとき
+    skip = 0
     for i in range(0, K-1, 2):
-        left.append(A[i+1]-A[i])
+        greedy_pair += A[i+1]-A[i]
         if i+2 < K:
-            skip_first.append(A[i+2]-A[i+1])
+            skip += A[i+2]-A[i+1]
     
-    # print(left)
-    # print(skip_first)
-    B = [sum(skip_first)]
-    if K%2 == 0:
-        print(sum(left))
-    # elif K == 1:
-    #     print(A[0])
-    else:
-        tmp = sum(skip_first)
-        for j in range(1, K, 2):
-            tmp = tmp - (A[j+1] - A[j])
-            tmp += A[j] - A[j-1]
-            B.append(tmp)
+    # あり得る奇妙さの合計のリスト
+    skipped_list = [skip]
 
-    
-        if len(B) == 0:
+    # 偶数なら前から貪欲に
+    if K%2 == 0:
+        print(greedy_pair)
+    # 奇数なら除外する靴下を全探索
+    else:
+        for j in range(1, K, 2):
+            # ペアを変更
+            skip = skip - (A[j+1] - A[j]) + (A[j] - A[j-1])
+            skipped_list.append(skip)
+
+        # Aの要素数が１の時はその靴下を除外するだけ
+        if len(skipped_list) == 0:
             print(0)
         else:
-            print(min(B))
+            print(min(skipped_list))
             
 
 
