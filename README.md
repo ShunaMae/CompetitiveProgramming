@@ -2,6 +2,15 @@
 
 ## Overview 
 
+Welcome to My COmpetitive Programing repository. This repository is my history on competitive progrmming, on and off, of course. 
+
+When I was a kid, I did not like math. I made many petty mistakes, and I couldn't fully grasp the concept of numbers. Looking back, I want to embrace that part of me as well, because it made me improve on what I was good at at the point of time - English (and Japanese). After I discovered the wonders of programming in college, my skills soon came in handy - that I do not struggle with English. 
+
+
+
+
+
+
 Welcome to Competitive Programming repository! This repository contains my (and others') codes for competitive programming. If I borrow someone's code, the referring URL is included in the file. 
 
 ## Structure 
