@@ -46,3 +46,6 @@ for s in range(N):
 ans = calc(N) - M - cnt if flag else 0
 print(ans)
 
+int(input())
+map(int, input().split())
+list(map(int, input().split()))
