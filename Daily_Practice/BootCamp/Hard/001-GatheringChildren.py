@@ -1,14 +1,16 @@
-def greedy(l):
+def greedy(l, num):
     pos = [(1) for _ in range(len(l))]
-    for i in range(100):
+    for _ in range(num):
+        new_pos = [(0) for _ in range(len(l))]
         for j in range(len(l)):
-            pos[j] -= 1
             if l[j] == "L":
-                pos[j] -= 1
-                pos[j-1] += 1
+                new_pos[j-1] += pos[j]
             else:
-                pos[j+1] += 1
-        print(*pos)
+                new_pos[j+1] += pos[j]
+        pos = new_pos
+    return pos
 
 S = list(input())
-greedy(S)
+
+print(*greedy(S, 100))
+
