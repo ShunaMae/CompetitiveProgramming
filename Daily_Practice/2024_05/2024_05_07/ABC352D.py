@@ -15,28 +15,16 @@ def main():
     for j in range(K):
         S.add(new_P[j])
 
-    start_min = S.pop(0)
-    start_max = S.pop()
-    ans = abs(start_min-start_max)
 
-    S.add(start_min)
-    S.add(start_max)
+    ans = abs(S[0]-S[-1])
 
-    for i in range(1,N-K):
+
+    for i in range(1,N-K+1):
 
         S.discard(new_P[i-1])
         S.add(new_P[i+K-1])
 
-
-        min_s = S.pop(0)
-        max_s = S.pop()
-        ans = min(ans, abs(max_s - min_s))
-
-        S.add(min_s)
-        S.add(max_s)
-
-        S.discard(new_P[i])
-        S.add(new_P[i+K])
+        ans = min(ans, abs(S[0] - S[-1]))
 
 
     return ans
