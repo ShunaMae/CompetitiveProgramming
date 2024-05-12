@@ -19,3 +19,18 @@ for i in range(N):
         ans += sorted_giants[i][0]
 
 print(ans)
+
+N = int(input())
+
+head_size = -1
+ans = 0
+
+for _ in range(N):
+    a, b = map(int, input().split())
+    # 肩の高さを答えに追加
+    ans += a 
+
+    # 頭の大きさを計算
+    head_size = max(head_size, b-a)
+
+print(ans+head_size)
