@@ -20,7 +20,7 @@ for item in X:
     prime_factors = divisors(item)
     s.add(prime_factors[0])
 
-print(s)
+
 ans_li = list(s)
 ans = 1
 

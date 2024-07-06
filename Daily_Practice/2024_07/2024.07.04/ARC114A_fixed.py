@@ -7,7 +7,7 @@ N = int(input())
 X = list(map(int, input().split()))
 ans = []
 
-for i in range(1, 3):
+for i in range(1, 16):
     comb_li = list(combinations(prime_list, i))
     for j in comb_li:
         num = 1
@@ -17,10 +17,8 @@ for i in range(1, 3):
         for item in X:
             if gcd(item, num) == 1:
                 flag = False
-        print(j, num, flag)
         if flag:
             ans.append(num)
             break
 
-print(ans)
 print(min(ans))
