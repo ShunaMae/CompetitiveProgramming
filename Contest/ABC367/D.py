@@ -27,3 +27,4 @@ for i in range(1, N + 1):
     d[csum[i + N]] += 1
 
 print(ans)
+
